@@ -30,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/9M5E84H.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./Kapture 2022-06-03 at 16.08.03.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Link of GIF [here](https://i.imgur.com/9M5E84H.gif)
 

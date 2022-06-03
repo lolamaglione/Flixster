@@ -54,6 +54,7 @@
         android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:numStars="5"
+        android:progressTint="#FFCC01"
         android:stepSize="0.5" />
 
     <ImageView

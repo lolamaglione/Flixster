@@ -86,11 +86,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             // else: poster image
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 imageURL = movie.getBackdropPath();
+                Glide.with(context).load(imageURL).
+                        transform(new CenterInside(),new RoundedCorners(15)).
+                        placeholder(R.drawable.flicks_backdrop_placeholder).
+                        error(R.drawable.flicks_backdrop_placeholder).into(ivPoster);
+
             } else {
                 imageURL = movie.getPosterPath();
+                Glide.with(context).load(imageURL).
+                        transform(new CenterInside(),new RoundedCorners(15)).
+                        placeholder(R.drawable.flicks_movie_placeholder).
+                        error(R.drawable.flicks_movie_placeholder).into(ivPoster);
+
             }
             // round corners
-            Glide.with(context).load(imageURL).transform(new CenterInside(),new RoundedCorners(15)).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
+            //Glide.with(context).load(imageURL).transform(new CenterInside(),new RoundedCorners(15)).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
         }
 
         @Override

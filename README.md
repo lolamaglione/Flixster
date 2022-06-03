@@ -30,13 +30,21 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/9M5E84H.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app: 
+This was my first time developing any android app so at first I found it challenging to understand
+the android components of building the app (understanding client, adapters, activities, and intent). 
+Something that I also found interesting but at first struggled with was the xml files because I wanted
+to understand how design and code interacted with each other. When I was working on some stretch features, 
+I struggled with implementing the ViewBinding library. I figured out how to implement it directly on
+the activities, but coulnd't figure out how to implement it in the MovieAdapter (with context). I wanted
+to implement it in the MovieAdapter because they use findViewById() method a lot. 
+Another thing that I really struggled with was using ellipsize for the description, but I managed to work it out. 
 
 ## Open-source libraries used
 

@@ -1,19 +1,25 @@
 package com.lolamaglione.flixster.models;
 
+import android.os.Parcelable;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Movie {
+@Parcel
+public class Movie{
 
     String posterPath;
     String title;
     String overview;
     String backdropPath;
+
+    public Movie(){}
 
     public Movie(JSONObject jsonObject) throws JSONException {
         posterPath = jsonObject.getString("poster_path");

@@ -14,6 +14,7 @@ import java.util.List;
 @Parcel
 public class Movie{
 
+    // variables that want to be displayed
     String posterPath;
     String title;
     String overview;
@@ -21,8 +22,10 @@ public class Movie{
     Double voteAverage;
     String language;
 
+    // empty constructor for Parcel class
     public Movie(){}
 
+    // constructor to set up all the variables from JSON file
     public Movie(JSONObject jsonObject) throws JSONException {
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");

@@ -11,6 +11,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterInside;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.lolamaglione.flixster.models.Movie;
 
 import org.parceler.Parcels;
@@ -54,7 +56,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         } else {
             imageURL = movie.getPosterPath();
         }
-        //get image poster
-        Glide.with(this).load(imageURL).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
+        //get image poster and round corners
+        Glide.with(this).load(imageURL).transform(new CenterInside(),new RoundedCorners(15)).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
     }
 }

@@ -41,4 +41,8 @@ public class Movie {
     public String getOverview() {
         return overview;
     }
+
+    public String getBackdropPath() {
+        return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
+    }
 }

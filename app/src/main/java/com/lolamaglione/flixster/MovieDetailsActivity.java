@@ -3,6 +3,7 @@ package com.lolamaglione.flixster;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -45,8 +46,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
         //vote average is 0.10, convert to 0.5 by dividing by 2
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage/2.0f);
-
+        String imageURL;
+        if(this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            imageURL = movie.getBackdropPath();
+        } else {
+            imageURL = movie.getPosterPath();
+        }
         //get image poster
-        Glide.with(this).load(movie.getPosterPath()).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
+        Glide.with(this).load(imageURL).placeholder(R.drawable.flicks_movie_placeholder).error(R.drawable.flicks_movie_placeholder).into(ivPoster);
     }
 }

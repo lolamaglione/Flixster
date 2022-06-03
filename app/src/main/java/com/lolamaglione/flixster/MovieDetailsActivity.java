@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterInside;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.lolamaglione.flixster.databinding.ActivityMainBinding;
+import com.lolamaglione.flixster.databinding.ActivityMovieDetailsBinding;
 import com.lolamaglione.flixster.models.Movie;
 
 import org.parceler.Parcels;
@@ -29,16 +32,21 @@ public class MovieDetailsActivity extends AppCompatActivity {
     ImageView ivPoster;
     TextView tvLanguage;
 
+    private ActivityMovieDetailsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_details);
-        // resolve the view objects
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvOverview = (TextView) findViewById(R.id.tvOverview);
-        rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage) ;
-        ivPoster = (ImageView) findViewById(R.id.ivPoster);
-        tvLanguage = (TextView) findViewById(R.id.tvLanguage);
+        // activity_movie_details.xml -> ActivityMovieDetailsBinding
+        binding = ActivityMovieDetailsBinding.inflate(getLayoutInflater());
+        // layout of activity is stored in a special property called root
+        View view = binding.getRoot();
+        setContentView(view);
+        // resolve the view objects, originally was found with findViewByID;
+        tvTitle = binding.tvTitle;
+        tvOverview = binding.tvOverview;
+        rbVoteAverage = binding.rbVoteAverage;
+        ivPoster = binding.ivPoster;
+        tvLanguage = binding.tvLanguage;
         //unwrap the movie passed in via intent, using its simple name as a key
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         Log.d("MovieDetailsActivity", String.format("showing details for %s", movie.getTitle()));

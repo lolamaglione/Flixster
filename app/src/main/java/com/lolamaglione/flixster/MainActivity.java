@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
@@ -28,15 +29,19 @@ public class MainActivity extends AppCompatActivity {
     public static String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=e3217c18e977cbb4240ebafe80b4c253";
     public static String TAG = "MainActivity";
     List<Movie> movies;
-    //private ResultProfileBinding binding;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        binding = ActivityMainBinding.inflate(getLayoutInflater());
-//        val rootView = ActivityMainBinding.root;
-        setContentView(R.layout.activity_main);
-        RecyclerView rvMovies = findViewById(R.id.rvMovies);
+        // activity_main.xml -> ActivityMainBinding
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        // layout of activity is stored in a special property called root
+        View view = binding.getRoot();
+        setContentView(view);
+       // setContentView(R.layout.activity_main);
+        RecyclerView rvMovies = binding.rvMovies;
+                //findViewById(R.id.rvMovies);
         movies = new ArrayList<>();
         //Create and adapter
         MovieAdapter movieAdapter = new MovieAdapter(this, movies);

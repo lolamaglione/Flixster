@@ -19,6 +19,7 @@ public class Movie{
     String overview;
     String backdropPath;
     Double voteAverage;
+    String language;
 
     public Movie(){}
 
@@ -28,6 +29,7 @@ public class Movie{
         overview = jsonObject.getString("overview");
         backdropPath = jsonObject.getString("backdrop_path");
         voteAverage = jsonObject.getDouble("vote_average");
+        language = jsonObject.getString("original_language");
     }
 
     public Double getVoteAverage() {
@@ -56,5 +58,9 @@ public class Movie{
 
     public String getBackdropPath() {
         return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
+    }
+
+    public String getLanguage(){
+        return language;
     }
 }

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#C8A2C8">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -18,7 +19,8 @@
         android:layout_marginStart="5dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:textSize="24sp"
-        tools:text="Fantastic Beasts: The Secrets of Dumbledore" />
+        tools:text="Fantastic Beasts: The Secrets of Dumbledore"
+        />
 
     <TextView
         android:id="@+id/tvOverview"
@@ -28,5 +30,6 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:ellipsize="end"
         tools:text="Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts magizoologist Newt Scamander to lead an intrepid team of wizards and witches. They soon encounter an array of old and new beasts as they clash with Grindelwald's growing legion of followers." />
 </RelativeLayout>

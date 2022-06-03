@@ -11,6 +11,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.facebook.stetho.common.ArrayListAccumulator;
 import com.lolamaglione.flixster.adapters.MovieAdapter;
+import com.lolamaglione.flixster.databinding.ActivityMainBinding;
 import com.lolamaglione.flixster.models.Movie;
 
 import org.json.JSONArray;
@@ -27,9 +28,13 @@ public class MainActivity extends AppCompatActivity {
     public static String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=e3217c18e977cbb4240ebafe80b4c253";
     public static String TAG = "MainActivity";
     List<Movie> movies;
+    //private ResultProfileBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        binding = ActivityMainBinding.inflate(getLayoutInflater());
+//        val rootView = ActivityMainBinding.root;
         setContentView(R.layout.activity_main);
         RecyclerView rvMovies = findViewById(R.id.rvMovies);
         movies = new ArrayList<>();

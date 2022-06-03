@@ -25,6 +25,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     TextView tvOverview;
     RatingBar rbVoteAverage;
     ImageView ivPoster;
+    TextView tvLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         tvOverview = (TextView) findViewById(R.id.tvOverview);
         rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage) ;
         ivPoster = (ImageView) findViewById(R.id.ivPoster);
+        tvLanguage = (TextView) findViewById(R.id.tvLanguage);
         //unwrap the movie passed in via intent, using its simple name as a key
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         Log.d("MovieDetailsActivity", String.format("showing details for %s", movie.getTitle()));
@@ -42,7 +44,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         //set teh title and overview
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
-
+        tvLanguage.setText("Language: " + movie.getLanguage());
         //vote average is 0.10, convert to 0.5 by dividing by 2
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage/2.0f);
